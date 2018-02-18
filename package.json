@@ -1,0 +1,10 @@
+{
+  "name": "ai-running",
+  "version": "1.0.0",
+  "description": "ai running",
+  "main": "app.js",
+  "repository": "git@github.com:shovity/ai-running.git",
+  "author": "Huong Nguyen <shovity@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
