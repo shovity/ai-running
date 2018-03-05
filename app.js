@@ -19,8 +19,6 @@ const callback = (error, response, body) => {
 
   const rc = body.match(/<div class="rc">(.+?)<\/div>/g)[0]
   const r = rc.match(/<h3 class="r">(.+?)<\/h3>/g)[0]
-  // const st = s.match(/<span class="st">(.+?)<\/span>/)[0]
-
   const st = body.match(/<span class="st">(.+?)<\/span>/)[1]
 
   const link = r.match(/<a href="(.+?)".+?<\/a>/)[1]
