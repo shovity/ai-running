@@ -6,5 +6,8 @@
   "repository": "git@github.com:shovity/ai-running.git",
   "author": "Huong Nguyen <shovity@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "request": "^2.83.0"
+  }
 }
