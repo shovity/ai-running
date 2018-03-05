@@ -9,13 +9,29 @@ const options = {
   headers: { 'user-agent': USER_AGENT },
 }
 
-const callback = (error, response, body) => {
-  let result = body
-    .match(/<span class="st">(.+?)<\/span>/g)[0]
+const filter = (raw) => {
+  return raw
     .replace(/<.+?>/g, '')
     .replace(/&.+?;/g, '')
+}
 
-  console.log(result)
+const callback = (error, response, body) => {
+
+  const rc = body.match(/<div class="rc">(.+?)<\/div>/g)[0]
+  const r = rc.match(/<h3 class="r">(.+?)<\/h3>/g)[0]
+  // const st = s.match(/<span class="st">(.+?)<\/span>/)[0]
+
+  const st = body.match(/<span class="st">(.+?)<\/span>/)[1]
+
+  const link = r.match(/<a href="(.+?)".+?<\/a>/)[1]
+  const title = filter(r)
+  const content = filter(st)
+
+  console.log({
+    title,
+    content,
+    link,
+  })
 }
 
 request(options, callback)
