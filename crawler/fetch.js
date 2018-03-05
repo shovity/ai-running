@@ -9,8 +9,13 @@ const fetch = (url, callback) => {
   request(
     {
       url,
-      options,
+      ...options,
     },
-    callback,
+    (err, res, body) => {
+      if (err) return callback(err)
+      return callback(null, body)
+    },
   )
 }
+
+module.exports = fetch

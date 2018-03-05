@@ -1,10 +1,10 @@
-const list = {
+const pattern = {
   tag: /<.+?>/g,
   charCode: /&.+?;/g,
 }
 
 const filter = (raw) => {
-  return raw.replace([ tag, charCode ], '')
+  return raw.replace([ /&.+?;/g, /<.+?>/g ], '')
 }
 
 module.exports = filter
